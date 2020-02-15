@@ -1,0 +1,20 @@
+<h3>Creer des equipes</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nbremp">Nombre employe</label>
+      <input type="text" class="form-control"
+             id="nbremp" required [(ngModel)]="nbremp" name="nbremp">
+    </div>
+    <div class="form-group">
+      <label for="nbrdep">Nombre Departement</label>
+      <input type="text" class="form-control"
+             id="nbrdep" required [(ngModel)]="nbrdep" name="nbrdep">
+    </div>
+   
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+</div>

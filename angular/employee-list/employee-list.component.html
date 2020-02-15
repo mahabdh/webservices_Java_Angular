@@ -1,0 +1,43 @@
+<div class="container-spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3>Liste des employés</h3>
+    </div>
+
+    <div class="panel-body">
+      <div class="form-group">
+        <label> Recherche </label>
+        <input type="text" [(ngModel)]="motCle" />
+        <button class="btn btn-primary" (click)="chercher()"> recherche </button>
+      </div>
+      <table class="table bg-light table-hover">
+        <thead>
+          <tr>
+            <th> Nom </th>
+            <th> Prénom </th>
+            <th> Email </th>
+            <th> Departement </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{employee.nom}}</td>
+            <td>{{employee.prenom}}</td>
+            <td>{{employee.adressMail}}</td>
+            <td>{{employee.departement.nomDepart}}</td>
+            <td>
+              <button (click)="employeeUpdate(employee.id)"
+                      class="btn btn-info" style="margin-left: 10px">
+                Mettre à jour
+              </button>
+              <button (click)="deleteEmployee(employee.id)"
+                      class="btn btn-danger">
+                Supprimer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
